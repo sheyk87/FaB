@@ -1,0 +1,144 @@
+/* Rules Codex Reader Styling */
+
+.rules-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .rules-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sticky Chapter Sidebar */
+.rules-sidebar {
+  position: sticky;
+  top: 85px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-dark);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+}
+
+.rules-nav-title {
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-gold);
+  margin-bottom: 0.5rem;
+}
+
+.rules-chapter-link {
+  padding: 0.55rem 0.85rem;
+  border-radius: 6px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rules-chapter-link:hover {
+  background: var(--bg-surface-elevated);
+  color: var(--text-main);
+}
+
+.rules-chapter-link.active {
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--text-gold);
+  border-left: 3px solid var(--border-gold);
+  font-weight: 700;
+}
+
+/* Quick Keyword Jump Bar */
+.quick-keywords-bar {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.kw-pill {
+  font-size: 0.75rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-dark);
+  color: var(--text-muted);
+  padding: 3px 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.kw-pill:hover {
+  border-color: var(--border-gold);
+  color: var(--text-gold);
+  background: var(--bg-surface-elevated);
+}
+
+/* Rules Content Reader */
+.rules-content-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-dark);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.rules-chapter-block {
+  border-bottom: 1px solid var(--border-dark);
+  padding-bottom: 2rem;
+}
+
+.rules-chapter-block:last-child {
+  border-bottom: none;
+}
+
+.chapter-heading {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  color: var(--text-gold);
+  margin-bottom: 0.25rem;
+}
+
+.chapter-subheading {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.rule-section-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-dark);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.rule-section-title {
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.rule-section-body {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  white-space: pre-line;
+}
