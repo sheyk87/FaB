@@ -13,6 +13,12 @@ require_once __DIR__ . '/../includes/CardService.php';
 $action = $_GET['action'] ?? 'search';
 $cardService = new CardService();
 
+// Si la base de datos se acaba de crear y no tiene cartas, importar automáticamente desde card.json
+if ($cardService->getCardCount() === 0) {
+    require_once __DIR__ . '/../config/setup.php';
+    runSetup();
+}
+
 if ($action === 'search') {
     $filters = [
         'query' => Security::sanitizeString($_GET['query'] ?? '', 100),

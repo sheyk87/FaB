@@ -240,4 +240,15 @@ class CardService {
         }
         return $heroes;
     }
+
+    /**
+     * Get total count of cards in database
+     */
+    public function getCardCount(): int {
+        try {
+            return (int)$this->pdo->query("SELECT COUNT(*) FROM `cards`")->fetchColumn();
+        } catch (PDOException $e) {
+            return 0;
+        }
+    }
 }
